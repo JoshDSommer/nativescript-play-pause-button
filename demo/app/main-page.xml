@@ -1,0 +1,7 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:pp="nativescript-play-pause-button"
+  loaded="pageLoaded">
+  <StackLayout>
+    <pp:PlayPauseButton width="100" height="100" marginTop="100"></pp:PlayPauseButton>
+  </StackLayout>
+</Page>
