@@ -1,6 +1,8 @@
 
 import { View } from 'ui/core/view';
+import {Color} from 'color';
 
+//declare const jp, com: any;
 declare const jp, android, com: any;
 
 
@@ -8,6 +10,15 @@ declare const jp, android, com: any;
 export class PlayPauseButton extends View {
 	private _androidViewId: number;
 	private _android: any; //<- jp.co.recruit_lifestyle.android.widget.PlayPauseButton;
+	private _color: string;
+
+	get buttonColor(): string {
+		return this._color;
+	}
+
+	set buttonColor(value: string) {
+		this._color = value;
+	}
 
 	get android(): any {
 		return this._android;
@@ -27,6 +38,7 @@ export class PlayPauseButton extends View {
 		this._android.setId(this._androidViewId);
 		// console.log(JSON.stringify(this._android));
 		// try {
+			this._android.setColor(new Color(this.buttonColor).android);
 
 		var that = new WeakRef(this);
 		// 	this._android.setOnControlStateChangeListener(new PlayPauseButton.OnControlStatusChangeListener({
