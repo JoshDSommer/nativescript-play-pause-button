@@ -7,6 +7,6 @@ export function pageLoaded(args: observable.EventData) {
     var page = <pages.Page>args.object;
 
 }
-export function PPTapped(params: any) {
-    console.log(' PP TAPPED');
+export function PPTapped(args) {
+    console.log(' Play Pause tapped : ' + args.eventData.state);
 }
