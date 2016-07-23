@@ -1,5 +1,6 @@
 ### NativeScript Play Pause Button
 
+![Nativescript Play Pause Button](sample-android.gif)
 
 Android based on: https://github.com/recruit-lifestyle/PlayPauseButton
 

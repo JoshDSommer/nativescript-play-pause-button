@@ -10,7 +10,6 @@
     },
     "files": [
         "demo/node_modules/tns-core-modules/tns-core-modules.d.ts",
-        "node_modules/tns-platform-declarations/android17.d.ts",
         "play-pause-button.d.ts",
         "play-pause-button.android.ts",
         "play-pause-button.ios.ts"
