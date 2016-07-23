@@ -3,5 +3,5 @@
 
 Android based on: https://github.com/recruit-lifestyle/PlayPauseButton
 
-iOS(Coming soon) based on: https://github.com/fruitcoder/PlayButton
+iOS(Coming soon) based on: https://github.com/suzuki-0000/AnimatablePlayButton
 
