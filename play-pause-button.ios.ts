@@ -8,17 +8,17 @@ declare const UIButton, common, interop, UIControlEvents, Selector, AnimatablePl
 const playPauseTapEvent = 'playPauseTap';
 
 class PlayPauseTapHandler extends NSObject {
-    private _owner: WeakRef<View>;
+	private _owner: WeakRef<View>;
 	private selected = false;
 
-    public static initWithOwner(owner: WeakRef<View>): PlayPauseTapHandler {
-        let handler = <PlayPauseTapHandler>PlayPauseTapHandler.new();
-        handler._owner = owner;
-        return handler;
-    }
+	public static initWithOwner(owner: WeakRef<View>): PlayPauseTapHandler {
+		let handler = <PlayPauseTapHandler>PlayPauseTapHandler.new();
+		handler._owner = owner;
+		return handler;
+	}
 
-    public tap(args) {
-        let owner = <any>this._owner.get();
+	public tap(args) {
+		let owner = <any>this._owner.get();
 		if (args.selected) {
 			args.deselect();
 			args.selected = false;
@@ -26,7 +26,7 @@ class PlayPauseTapHandler extends NSObject {
 			args.select();
 			args.selected = true;
 		}
-        if (owner) {
+		if (owner) {
 			owner.notify({
 				eventName: PlayPauseButton.playPauseTapEvent,
 				object: this,
@@ -34,12 +34,12 @@ class PlayPauseTapHandler extends NSObject {
 					state: args.selected
 				}
 			});
-        }
-    }
+		}
+	}
 
-    public static ObjCExposedMethods = {
+	public static ObjCExposedMethods = {
 		'tap': { returns: interop.types.void, params: [interop.types.id] }
-    };
+	};
 }
 
 export class PlayPauseButton extends View {

@@ -3,9 +3,7 @@ import { View } from 'ui/core/view';
 import { Button } from 'ui/button';
 import {Color} from 'color';
 
-//declare const jp, com: any;
 declare const jp, android, com: any;
-
 
 
 export class PlayPauseButton extends View {
@@ -41,9 +39,8 @@ export class PlayPauseButton extends View {
 
 		this._android.setColor(new Color(this.buttonColor).android);
 
-		var that = new WeakRef(this);
+		let that = new WeakRef(this);
 
-		//this isn't working ;/
 		this._android.setOnControlStatusChangeListener(new jp.co.recruit_lifestyle.android.widget.PlayPauseButton.OnControlStatusChangeListener({
 			get owner() {
 				return that.get();
