@@ -1,10 +1,16 @@
 ### NativeScript Play Pause Button
+[![npm](https://img.shields.io/npm/v/nativescript-play-pause-button.svg)](https://www.npmjs.com/package/nativescript-play-pause-button)
+[![npm](https://img.shields.io/npm/dt/nativescript-play-pause-button.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-play-pause-button)
+
 
 #Android
-![Nativescript Play Pause Button](sample-android.gif)
+
+![Nativescript Play Pause Button](https://raw.githubusercontent.com/TheOriginalJosh/nativescript-play-pause-button/master/sample-android.gif)
+
 
 #iOS
-![Nativescript Play Pause Button](sample-ios.gif)
+
+![Nativescript Play Pause Button](https://raw.githubusercontent.com/TheOriginalJosh/nativescript-play-pause-button/master/sample-ios.gif)
 
 Example:
 
@@ -24,5 +30,5 @@ backgound color must be set with `buttonBgColor` or else the background will be 
 
 Android based on: https://github.com/recruit-lifestyle/PlayPauseButton
 
-iOS(Coming soon) based on: https://github.com/suzuki-0000/AnimatablePlayButton
+iOS based on: https://github.com/suzuki-0000/AnimatablePlayButton
 
