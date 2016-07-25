@@ -1,6 +1,7 @@
 
 import { View } from 'ui/core/view';
 import {topmost} from 'ui/frame';
+import {Placeholder} from 'ui/placeholder';
 import { Button} from 'ui/button';
 import {Color} from 'color';
 
@@ -44,24 +45,26 @@ class PlayPauseTapHandler extends NSObject {
 
 export class PlayPauseButton extends View {
 	public static playPauseTapEvent = playPauseTapEvent;
+	public static btnwidth;
+
 	private _ios: any;
 	private _tapHandler: any;
-	private _color: string;
+	private _buttonColor: string;
+	private _buttonBgColor: string;
 	private _width: number;
 
 	get buttonColor(): string {
-		return this._color;
+		return this._buttonColor;
 	}
 
 	set buttonColor(value: string) {
-		this._color = value;
+		//	this._ios.color = new Color(value).ios;
+		this._buttonColor = value;
 	}
 
-	get width() {
-		return this._width;
-	}
-	set width(value: number) {
-		this._width = value;
+	set buttonBgColor(value: string) {
+		//	this._ios.bgColor = new Color(value).ios;
+		this._buttonBgColor = value;
 	}
 
 	get _nativeView(): any {
@@ -72,16 +75,23 @@ export class PlayPauseButton extends View {
 		return this._ios;
 	}
 
+
 	public constructor() {
 		super();
-		console.log(this.buttonColor);
 
 		let button = new AnimatablePlayButton(100);
 
-		button.bgColor = new UIColor(1, 0);
-		button.color = new UIColor(0, 1);
+		button.bgColor = UIColor.blackColor();
+		button.color = UIColor.whiteColor();
+
 		this._ios = button;
-		this._tapHandler = PlayPauseTapHandler.initWithOwner(new WeakRef(this));
+		this._tapHandler = PlayPauseTapHandler.initWithOwner(new WeakRef(<any>this));
 		this._ios.addTargetActionForControlEvents(this._tapHandler, 'tap', UIControlEvents.UIControlEventTouchUpInside);
+	}
+
+	onLoaded() {
+
+		this._ios.color = new Color(this._buttonColor).ios;
+		this._ios.bgColor = new Color(this._buttonBgColor).ios;
 	}
 }

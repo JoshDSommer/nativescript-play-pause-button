@@ -28,6 +28,11 @@ export class PlayPauseButton extends View {
 		return this._android;
 	}
 
+	set buttonWidth(value: number) {
+		this.width = value;
+	}
+
+
 
 	public _createUI() {
 		let jpPlayPauseButton = jp.co.recruit_lifestyle.android.widget.PlayPauseButton;
