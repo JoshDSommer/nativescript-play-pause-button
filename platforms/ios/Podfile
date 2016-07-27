@@ -1,2 +1,1 @@
-pod 'AnimatablePlayButton'
-use_frameworks!
+pod 'AnimatablePlayButton', :git => "https://github.com/NathanWalker/AnimatablePlayButton.git"
