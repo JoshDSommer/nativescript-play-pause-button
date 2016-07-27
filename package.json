@@ -1,6 +1,6 @@
 {
   "name": "nativescript-play-pause-button",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "NativeScript Play Pause Button",
   "main": "play-pause-button.js",
   "typings": "play-pause-button.d.ts",
