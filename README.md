@@ -45,3 +45,4 @@ Android based on: https://github.com/recruit-lifestyle/PlayPauseButton
 
 iOS based on: https://github.com/suzuki-0000/AnimatablePlayButton
 
+### Thank You [Nathan Walker](https://github.com/NathanWalker) for helping get the iOS version up and running
