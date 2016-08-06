@@ -76,6 +76,12 @@ export class PlayPauseButton extends ContentView {
   }
 
   onLoaded() {
+    // ensure a default is set at least on size
+    if (!this.width) this.width = 50;
+    if (!this.height) this.height = 50;
+    // ensure UIButton is sized to match (mainly an issue inside ListView)
+    this._ios.frame = CGRectMake(0, 0, this.width, this.height);
+    // create the layers of the button
     this._ios.createLayers(CGRectMake(0, 0, this.width, this.height));
 	}
 }
