@@ -32,8 +32,6 @@ export class PlayPauseButton extends View {
 		this.width = value;
 	}
 
-
-
 	public _createUI() {
 		let jpPlayPauseButton = jp.co.recruit_lifestyle.android.widget.PlayPauseButton;
 		this._android = new jpPlayPauseButton(this._context);
@@ -58,7 +56,7 @@ export class PlayPauseButton extends View {
 						eventName: PlayPauseButton.playPauseTapEvent,
 						object: this,
 						eventData: {
-							state: state
+							state: !state
 						}
 					});
 				}

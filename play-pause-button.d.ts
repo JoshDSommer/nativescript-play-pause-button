@@ -9,6 +9,7 @@ declare module "nativescript-play-pause-button" {
 
     public static playPauseTapEvent: string;
     android: any;
+    ios: any;
 
   }
 
