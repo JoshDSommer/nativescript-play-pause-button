@@ -6,7 +6,6 @@ const playPauseTapEvent = 'playPauseTap';
 
 class PlayPauseTapHandler extends NSObject {
 	private _owner: WeakRef<ContentView>;
-	private selected = false;
 
 	public static initWithOwner(owner: WeakRef<ContentView>): PlayPauseTapHandler {
 		let handler = <PlayPauseTapHandler>PlayPauseTapHandler.new();
@@ -18,17 +17,15 @@ class PlayPauseTapHandler extends NSObject {
 		let owner = <any>this._owner.get();
 		if (args.selected) {
 			args.deselect();
-			args.selected = false;
 		} else {
 			args.select();
-			args.selected = true;
 		}
 		if (owner) {
 			owner.notify({
 				eventName: PlayPauseButton.playPauseTapEvent,
 				object: this,
 				eventData: {
-					state: args.selected
+					state: !args.selected
 				}
 			});
 		}
@@ -50,7 +47,7 @@ export class PlayPauseButton extends ContentView {
 
 		let button = new AnimatablePlayButton();
 		button.bgColor = UIColor.blackColor();
-		button.color = UIColor.whiteColor();
+    button.color = UIColor.whiteColor();
 
 		this._ios = button;
 		this._tapHandler = PlayPauseTapHandler.initWithOwner(new WeakRef(<any>this));
@@ -75,7 +72,14 @@ export class PlayPauseButton extends ContentView {
 		return this._ios;
 	}
 
-	onLoaded() {
-		this._ios.createLayers(CGRectMake(0, 0, this.width, this.height));
+  onLoaded() {
+    // ensure a default is set at least on size
+    if (!this.width) this.width = 50;
+    if (!this.height) this.height = 50;
+    // ensure UIButton is sized to match (mainly an issue inside ListView)
+    this._ios.frame = CGRectMake(0, 0, this.width, this.height);
+    // create the layers of the button
+    this._ios.createLayers(CGRectMake(0, 0, this.width, this.height));
+    this._ios.select();
 	}
 }
